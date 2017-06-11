@@ -1,0 +1,18 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="edu.gsu.httpcs.a2017summer.fragment.DemoFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:text="@string/hello_demo_fragment"-->
+        <!--android:gravity="center"-->
+        <!--android:layout_gravity="center"/>-->
+    <ListView
+        android:id="@+id/fragment_demo_lv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></ListView>
+</FrameLayout>
