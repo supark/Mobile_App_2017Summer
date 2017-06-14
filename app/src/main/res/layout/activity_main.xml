@@ -11,7 +11,7 @@
 
 <!--//subview-->
 <RelativeLayout
-    android:id="@+id/activity_class1_title"
+    android:id="@+id/activity_main_title"
     android:layout_width="match_parent"
     android:layout_height="65dp"
     android:background="@android:color/holo_blue_bright"
@@ -54,7 +54,7 @@
 </RelativeLayout>
     <!-- check later the first main or class1 line-->
 <LinearLayout
-    android:id="@+id/activity_class1_tool"
+    android:id="@+id/activity_main_tool"
     android:layout_width="match_parent"
     android:layout_height="65dp"
     android:background="@android:color/white"
@@ -97,8 +97,8 @@
     android:id="@+id/activity_main_fragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_below="@id/activity_class1_title"
-    android:layout_above="@id/activity_class1_tool"
+    android:layout_below="@id/activity_main_title"
+    android:layout_above="@id/activity_main_tool"
     android:background="@android:color/darker_gray"
     ></LinearLayout>
 
