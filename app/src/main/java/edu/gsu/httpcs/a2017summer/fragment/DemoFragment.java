@@ -4,9 +4,7 @@ package edu.gsu.httpcs.a2017summer.fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.constraint.solver.ArrayLinkedVariables;
 import android.support.v4.app.Fragment;
-import android.support.v4.widget.ListViewAutoScrollHelper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,14 +13,13 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-import edu.gsu.httpcs.a2017summer.LaunchModeActivity;
+import edu.gsu.httpcs.a2017summer.ActivityA;
+import edu.gsu.httpcs.a2017summer.AdvanceListViewActivity;
+import edu.gsu.httpcs.a2017summer.NotificationActivity;
 import edu.gsu.httpcs.a2017summer.R;
 import edu.gsu.httpcs.a2017summer.ScaleTypeActivity;
 import edu.gsu.httpcs.a2017summer.ViewPagerActivity;
 import edu.gsu.httpcs.a2017summer.adapter.ListNormalAdapter;
-
-
-import static android.icu.lang.UCharacter.GraphemeClusterBreak.V;
 
 
 /**
@@ -43,8 +40,8 @@ public class DemoFragment extends Fragment {
         contentList.add("ViewPager");
         contentList.add("ImageScaleType");
         contentList.add("9Patch");
-        contentList.add("A");
-        contentList.add("B");
+        contentList.add("Notification");
+        contentList.add("AdvanceListView");
         contentList.add("C");
         contentList.add("LaunchMode");
         contentList.add("E");
@@ -90,8 +87,20 @@ public class DemoFragment extends Fragment {
                         Intent intent1 = new Intent(getActivity(), ScaleTypeActivity.class);
                         startActivity(intent1);
                         break;
+//                    case 2:
+//                        Intent intent2 = new Intent(getActivity(), ScaleTypeActivity.class);
+//                        startActivity(intent2);
+//                        break;
+                    case 3:
+                        Intent intent3 = new Intent(getActivity(), NotificationActivity.class);
+                        startActivity(intent3);
+                        break;
+                    case 4:
+                        Intent intent4 = new Intent(getActivity(), AdvanceListViewActivity.class);
+                        startActivity(intent4);
+                        break;
                     case 6:
-                        Intent intent6 = new Intent(getActivity(), LaunchModeActivity.class);
+                        Intent intent6 = new Intent(getActivity(), ActivityA.class);
                         startActivity(intent6);
 
                     default:

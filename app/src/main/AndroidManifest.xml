@@ -20,9 +20,12 @@
         </activity>
         <activity android:name=".ViewPagerActivity" />
         <activity
-            android:name=".LaunchModeActivity"
+            android:name=".ActivityA"
             android:launchMode="singleInstance" />
-        <activity android:name=".ScaleTypeActivity"></activity>
+        <activity android:name=".ScaleTypeActivity" />
+        <activity android:name=".NotificationActivity" />
+        <activity android:name=".AdvanceListViewActivity" />
+        <activity android:name=".LaunchModeActivity"></activity>
     </application>
 
 </manifest>

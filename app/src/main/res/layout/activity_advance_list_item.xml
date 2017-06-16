@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/odd"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:visibility="visible">
+        <ImageView
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_centerHorizontal="true"
+        android:src="@mipmap/ic_launcher"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+
+        /></RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/even"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:visibility="invisible">
+        <ImageView
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/ic_launcher"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+
+            /></RelativeLayout>
+
+    <TextView
+        android:id="@+id/activity_advance_list_item_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="66dp"
+        android:layout_centerVertical="true"
+        android:hint="Test"
+        android:textColor="@android:color/white"
+        android:textSize="26sp"
+        android:gravity="center_vertical"/>
+</RelativeLayout>
