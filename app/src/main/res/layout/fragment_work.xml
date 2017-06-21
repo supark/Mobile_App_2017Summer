@@ -1,13 +1,147 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="edu.gsu.httpcs.a2017summer.fragment.WorkFragment">
+    tools:context="edu.gsu.httpcs.a2017summer.fragment.WorkFragment"
+    android:background="@android:color/black"
+>
 
-    <!-- TODO: Update blank fragment layout -->
+
+
+    <RelativeLayout
+        android:id="@+id/activity_second"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:background="@android:color/holo_blue_dark"
+    android:layout_below="@id/activity_main_title"
+    >
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="hello_work_fragment" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="dkjfldkfldknf.dfl.djf."
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:textSize="18sp"
+        />
+<!--end second-->
 
-</FrameLayout>
+</RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/after_third"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:layout_below="@+id/activity_second"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="13dp">
+
+        <View
+            android:layout_width="5dp"
+            android:layout_height="1dp"
+            android:padding="1dp"
+            android:layout_margin="1dp"
+            android:layout_marginTop="1dp"
+            android:background="@android:color/black"></View>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Quiz1"
+            android:background="@android:color/darker_gray"
+            android:textAllCaps="false"/>
+        <View
+            android:layout_width="5dp"
+            android:layout_height="1dp"
+            android:padding="1dp"
+            android:layout_margin="1dp"
+            android:layout_marginTop="1dp"
+            android:background="@android:color/black"></View>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Quiz2"
+            android:background="@android:color/darker_gray"
+            android:textAllCaps="false"/>
+        <View
+            android:layout_width="5dp"
+            android:layout_height="1dp"
+            android:padding="1dp"
+            android:layout_margin="1dp"
+            android:layout_marginTop="1dp"
+            android:background="@android:color/black"
+            android:textAllCaps="false"></View>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Quiz3"
+            android:background="@android:color/darker_gray"
+            android:textAllCaps="false"/>
+        <View
+            android:layout_width="5dp"
+            android:layout_height="5dp"
+            android:padding="5dp"
+            android:layout_margin="1dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/black"></View>
+    </LinearLayout>
+    <!--end third-->
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/after_third"
+        android:orientation="vertical">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:background="@android:color/black"></View>
+
+        <Button
+            android:id="@+id/showMsgIdClicked"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/round_button_bg"
+            android:text="submit"
+            android:onClick="showMsg"/>
+
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="@android:color/holo_blue_dark"
+        android:layout_below="@id/activity_main_title"
+        android:layout_alignParentBottom="true">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="dkjfldkfldknf.dfl.djf."
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:textSize="18sp"
+            />
+
+    </RelativeLayout>
+    <!--end round button-->
+
+
+
+
+    <!--<LinearLayout-->
+        <!--android:orientation="vertical"-->
+        <!--android:id="@+id/activity_main_fragment"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_below="@id/activity_main_title"-->
+        <!--android:layout_above="@id/activity_main_tool"-->
+        <!--android:background="@android:color/black"-->
+        <!--&gt;</LinearLayout>-->
+
+</RelativeLayout>

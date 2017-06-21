@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import edu.gsu.httpcs.a2017summer.R;
+import edu.gsu.httpcs.a2017summer.util.UtilLog;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -54,6 +55,7 @@ public class GreenFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        UtilLog.d("Fragment", "GreenCreate");
     }
 
     @Override
@@ -62,5 +64,34 @@ public class GreenFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_green, container, false);
     }
+    @Override
+    public void onStart() {
+        super.onStart();
+        UtilLog.d("Fragment", "Green:onStart");
+    }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        UtilLog.d("Fragment", "Green:onResume");
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        UtilLog.d("Fragment", "Green:onPause");
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        UtilLog.d("Fragment", "Green : onStop");
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        UtilLog.d("Fragment", "Greend : onDestroy");
+    }
+    //store most three pages
 }

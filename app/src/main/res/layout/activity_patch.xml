@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="edu.gsu.httpcs.a2017summer.PatchActivity">
+
+
+    <ImageView
+        android:id="@+id/original_nomail"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="11"
+        android:background="@android:color/white"
+        android:src="@mipmap/nomail"
+        android:scaleType="fitXY"
+        />
+    <ImageView
+        android:id="@+id/nomail9"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="11"
+        android:background="@android:color/white"
+        android:src="@drawable/nomail"
+        android:scaleType="center"
+        />
+</LinearLayout>

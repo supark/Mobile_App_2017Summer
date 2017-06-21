@@ -15,11 +15,15 @@ import java.util.ArrayList;
 
 import edu.gsu.httpcs.a2017summer.ActivityA;
 import edu.gsu.httpcs.a2017summer.AdvanceListViewActivity;
+import edu.gsu.httpcs.a2017summer.AdvancedViewPagerActivity;
 import edu.gsu.httpcs.a2017summer.NotificationActivity;
+import edu.gsu.httpcs.a2017summer.PatchActivity;
 import edu.gsu.httpcs.a2017summer.R;
+import edu.gsu.httpcs.a2017summer.ResultActivity;
 import edu.gsu.httpcs.a2017summer.ScaleTypeActivity;
 import edu.gsu.httpcs.a2017summer.ViewPagerActivity;
 import edu.gsu.httpcs.a2017summer.adapter.ListNormalAdapter;
+import edu.gsu.httpcs.a2017summer.audio.BaseBean;
 
 
 /**
@@ -42,9 +46,9 @@ public class DemoFragment extends Fragment {
         contentList.add("9Patch");
         contentList.add("Notification");
         contentList.add("AdvanceListView");
-        contentList.add("C");
+        contentList.add("AdvanceViewPager");
         contentList.add("LaunchMode");
-        contentList.add("E");
+        contentList.add("ActivityResult");
         contentList.add("F");
         contentList.add("G");
         contentList.add("H");
@@ -54,13 +58,6 @@ public class DemoFragment extends Fragment {
 
     }
 
-
-//    public static DemoFragment newInstance(String param1, String param2) {
-//        DemoFragment fragment = new DemoFragment();
-//        Bundle args = new Bundle();
-//        fragment.setArguments(args);
-//        return fragment;
-//    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -87,10 +84,10 @@ public class DemoFragment extends Fragment {
                         Intent intent1 = new Intent(getActivity(), ScaleTypeActivity.class);
                         startActivity(intent1);
                         break;
-//                    case 2:
-//                        Intent intent2 = new Intent(getActivity(), ScaleTypeActivity.class);
-//                        startActivity(intent2);
-//                        break;
+                    case 2:
+                        Intent intent2 = new Intent(getActivity(), PatchActivity.class);
+                        startActivity(intent2);
+                        break;
                     case 3:
                         Intent intent3 = new Intent(getActivity(), NotificationActivity.class);
                         startActivity(intent3);
@@ -99,10 +96,27 @@ public class DemoFragment extends Fragment {
                         Intent intent4 = new Intent(getActivity(), AdvanceListViewActivity.class);
                         startActivity(intent4);
                         break;
+                    case 5:
+                        Intent intent5 = new Intent(getActivity(), AdvancedViewPagerActivity.class);
+                        startActivity(intent5);
+                        break;
                     case 6:
                         Intent intent6 = new Intent(getActivity(), ActivityA.class);
+                        intent6.putExtra("StringInfo", "fromDemoFragment");
+                        intent6.putExtra("IntegerInfo", 10);
+                        Bundle bundle = new Bundle();
+                        BaseBean bean = new BaseBean();
+                        bean.setName("bean");
+                        bundle.putString("StringBundle", "FromBundleDemo");
+                        bundle.putInt("IntegerBundle", 101);
+                        bundle.putSerializable("Object", bean);
+                        intent6.putExtra("Bundle", bundle);
                         startActivity(intent6);
-
+                        break;
+                    case 7:
+                        Intent intent7 = new Intent(getActivity(), ResultActivity.class);
+                        startActivity(intent7);  //
+                        break;
                     default:
                 }
             }

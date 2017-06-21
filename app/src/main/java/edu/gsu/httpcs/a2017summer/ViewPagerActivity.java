@@ -37,7 +37,7 @@ public class ViewPagerActivity extends AppCompatActivity {
 
         BaseViewPagerAdapter pagerAdapter = new BaseViewPagerAdapter(getSupportFragmentManager(), list);
         viewPager.setAdapter(pagerAdapter);
-        viewPager.setCurrentItem(1);  //set default one , showing green one coz of starting 0 index
+        viewPager.setCurrentItem(0);  //set default one , showing green one coz of starting 0 index
 
     }
 
@@ -78,4 +78,6 @@ public class ViewPagerActivity extends AppCompatActivity {
         super.onRestart();
         Log.d("LifeCycle", "onReStart");
     }
+
+    //stroe all the instance; occupy a lot of space
 }

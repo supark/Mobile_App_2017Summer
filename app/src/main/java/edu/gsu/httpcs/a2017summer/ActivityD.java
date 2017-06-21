@@ -1,22 +1,14 @@
 package edu.gsu.httpcs.a2017summer;
 
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.Toast;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import edu.gsu.httpcs.a2017summer.audio.BaseBean;
 
-import static android.R.attr.data;
-import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
-
-public class ActivityA extends BaseActivity {
+public class ActivityD extends BaseActivity {
 
     @OnClick(R.id.activity_click_A)
     public void toA (View v) {
@@ -37,29 +29,12 @@ public class ActivityA extends BaseActivity {
     public void toD (View v) {
         goToActivity(ActivityD.class);
     }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_a);
+        setContentView(R.layout.activity_d);
         ButterKnife.bind(this);
-
-        Intent intent = getIntent();
-        Bundle bundle = intent.getBundleExtra("Bundle");
-        String bs = bundle.getString("StringBundle");
-        int bi = bundle.getInt("IntegerBundle", 0);
-        BaseBean bean = (BaseBean) bundle.getSerializable("Object");
-        showToast(bean.getName());
-        showToast(bs);
-        showToast("Integer is : " + bi);
-
-//        String s = intent.getStringExtra("StringInfo");
-//        int i = intent.getIntExtra("IntegerInfo", 0);
-//        showToast(s);
-//        showToast(i + "");  //or String.valueOf(i)
-//        showToast("Integer is : " + i);
-
-
+        showToast("onCreate");
     }
 
     @Override

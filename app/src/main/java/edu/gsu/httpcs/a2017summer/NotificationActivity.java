@@ -27,7 +27,7 @@ public class NotificationActivity extends BaseActivity {
     @OnClick(R.id.activity_notification_small)
     public void smallNotification(View v) {
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this); //(2)
-        mBuilder.setContentTitle("Title")
+        mBuilder.setContentTitle("Title")  //chain programming like .set .set .set
                 .setContentText("Text")
                 .setContentIntent(getDefaultIntent(Notification.FLAG_AUTO_CANCEL))
                 .setNumber(10)

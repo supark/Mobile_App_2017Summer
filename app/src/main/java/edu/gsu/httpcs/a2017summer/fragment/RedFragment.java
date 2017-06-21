@@ -3,11 +3,13 @@ package edu.gsu.httpcs.a2017summer.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import edu.gsu.httpcs.a2017summer.R;
+import edu.gsu.httpcs.a2017summer.util.UtilLog;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -54,6 +56,9 @@ public class RedFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+      //  Log.d("Fragment", "onCreate");
+
+        UtilLog.d("Fragment", "RedCreate");
     }
 
     @Override
@@ -62,5 +67,33 @@ public class RedFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_red, container, false);
     }
+    @Override
+    public void onStart() {
+        super.onStart();
+        UtilLog.d("Fragment", "Red:onStart");
+    }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        UtilLog.d("Fragment", "Red:onResume");
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        UtilLog.d("Fragment", "Red:onPause");
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        UtilLog.d("Fragment", "Red : onStop");
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        UtilLog.d("Fragment", "Red : onDestroy");
+    }
 }

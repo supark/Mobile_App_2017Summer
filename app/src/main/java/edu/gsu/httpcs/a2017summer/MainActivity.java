@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportFragmentManager().beginTransaction().replace(R.id.activity_main_fragment, demoFragment).commit();
 
+            //assigning an onclicklistener
             tv_demo.setOnClickListener(new View.OnClickListener() {
 
                 @Override
