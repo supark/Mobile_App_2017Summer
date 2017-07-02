@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="edu.gsu.httpcs.a2017summer.CheckBoxActivity">
+
+    <CheckBox
+        android:id="@+id/activity_check_box_1"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="New York"
+        />
+    <CheckBox
+        android:id="@+id/activity_check_box_2"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Washington D.C."
+        />
+    <CheckBox
+        android:id="@+id/activity_check_box_3"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Atlanta"
+        />
+    <Button
+        android:id="@+id/activity_check_box_submit"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Submit"
+        android:layout_marginTop="20dp"/>
+</LinearLayout>

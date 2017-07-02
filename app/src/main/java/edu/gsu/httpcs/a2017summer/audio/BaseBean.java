@@ -11,9 +11,9 @@ public class BaseBean implements Serializable {
 
     public String getName() {
         return name;
-    }
+    }  //getter
 
     public void setName(String name) {
         this.name = name;
-    }
+    }  //setter
 }

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="edu.gsu.httpcs.a2017summer.RadioGroupActivity">
+
+    <RadioGroup
+        android:id="@+id/activit_radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="RadioButton1"
+            />
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="RadioButton2"
+            />
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="RadioButton3"
+            />
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="RadioButton4"
+            />
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="RadioButton5"
+            />
+
+        </RadioGroup>
+
+    <Button
+        android:id="@+id/activity_radio_group_submit"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Submit"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        />
+</LinearLayout>

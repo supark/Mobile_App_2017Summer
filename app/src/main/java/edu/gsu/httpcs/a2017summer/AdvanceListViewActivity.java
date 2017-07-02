@@ -23,6 +23,7 @@ public class AdvanceListViewActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_advance);
         ButterKnife.bind(this);
+
         ArrayList<String> list = new ArrayList<>();
         list.add("Hello");
         list.add("Hello, how are you?");
@@ -54,8 +55,8 @@ public class AdvanceListViewActivity extends BaseActivity {
 
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener(){  //showing position of arraylist when clicking
             @Override
-          public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                showToast(String.valueOf(position));
+          public void onItemClick(AdapterView<?> parent, View view, int position, long id) {  //id is related to database
+                showToast(String.valueOf(position));  //in order to get item Toast.makeText(getApplication(), "Clicked " + list[position], Toast_LENGTH_SHORT).show();
             }
         });
 

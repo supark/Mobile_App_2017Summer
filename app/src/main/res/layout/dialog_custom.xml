@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="300dp"
+    android:layout_height="460dp"
+    android:orientation="vertical"
+    android:background="@android:color/darker_gray"
+    >
+
+    <TextView
+        android:id="@+id/dialog_custom_tv"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="DialogTitle"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:background="@android:color/black"
+        />
+    <ImageView
+        android:layout_below="@id/dialog_custom_tv"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:src="@mipmap/panda"
+        android:scaleType="centerCrop"/>
+
+    <Button
+        android:id="@+id/dialog_custom_ok"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:text="OK"/>
+</LinearLayout>

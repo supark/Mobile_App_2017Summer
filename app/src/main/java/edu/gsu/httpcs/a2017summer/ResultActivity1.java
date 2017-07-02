@@ -13,8 +13,7 @@ public class ResultActivity1 extends AppCompatActivity {
     }
 
     @Override
-    public void onBackPressed() {
-
+    public void onBackPressed() {  //when user click back button, the system will call this method
         Intent intent = new Intent();
         intent.putExtra("Data", "Data");
         setResult(RESULT_OK, intent);

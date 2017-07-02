@@ -31,9 +31,9 @@ public class AdvanceListViewAdapter extends BaseAdapter {
     public AdvanceListViewAdapter(Context context, ArrayList<String> list) {  //adapter construct needs two parameters
         this.context = context;
         this.list = list;
-        inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);  //convert inflate - 1
     }
-
+    //Below from getCount() to View getView(~~) are required because listview always ask to adapter get information.
     @Override
     public int getCount() {
         return list.size();
@@ -42,7 +42,7 @@ public class AdvanceListViewAdapter extends BaseAdapter {
     @Override
     public Object getItem(int position) {
         return position;
-    }
+    }  //return list[position];
 
     @Override
     public long getItemId(int position) {
@@ -56,7 +56,7 @@ public class AdvanceListViewAdapter extends BaseAdapter {
 
         if(convertView == null) {
             Log.d("ViewHolder", "getViewById");
-            convertView = inflater.inflate(R.layout.activity_advance_list_item, parent, false);
+            convertView = inflater.inflate(R.layout.activity_advance_list_item, parent, false); //convert inflate - 2
             viewHolder = new ViewHolder();
             viewHolder.rl_odd = (RelativeLayout)convertView.findViewById(R.id.odd);
             viewHolder.rl_even = (RelativeLayout)convertView.findViewById(R.id.even);

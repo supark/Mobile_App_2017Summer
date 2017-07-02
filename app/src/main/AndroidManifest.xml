@@ -39,7 +39,16 @@
         <activity android:name=".AdvancedViewPagerActivity" />
         <activity android:name=".ResultActivity1" />
         <activity android:name=".ResultActivity" />
-        <activity android:name=".ResultActivity2"></activity>
+        <activity android:name=".ResultActivity2" />
+        <activity android:name=".RadioGroupActivity" />
+        <activity android:name=".CheckBoxActivity" />
+        <activity android:name=".DialogActivity" />
+        <activity android:name=".HandlerActivity" />
+        <activity android:name=".RunableHandlerActivity" />
+        <activity android:name=".AnimationActivity" />
+        <activity android:name=".AnimatorActivity" />
+        <activity android:name=".GestureActivity" />
+        <activity android:name=".SharedPreferenceActivity"></activity>
     </application>
 
 </manifest>

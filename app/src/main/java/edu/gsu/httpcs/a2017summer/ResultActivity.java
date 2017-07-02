@@ -33,8 +33,9 @@ public class ResultActivity extends BaseActivity {
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {  //requestCode parameter is ACTIVITY1 OR ACTIVITY2
+        //data parameter is send back information from the former activity
+        super.onActivityResult(requestCode, resultCode, data); //resultCode parameter is success or fail
         String s = data.getStringExtra("Data");
         switch (requestCode) {
             case ACTIVITY1:

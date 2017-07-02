@@ -45,18 +45,21 @@ public class ActivityA extends BaseActivity {
         ButterKnife.bind(this);
 
         Intent intent = getIntent();
+
         Bundle bundle = intent.getBundleExtra("Bundle");
         String bs = bundle.getString("StringBundle");
         int bi = bundle.getInt("IntegerBundle", 0);
+
         BaseBean bean = (BaseBean) bundle.getSerializable("Object");
         showToast(bean.getName());
+
         showToast(bs);
         showToast("Integer is : " + bi);
 
 //        String s = intent.getStringExtra("StringInfo");
 //        int i = intent.getIntExtra("IntegerInfo", 0);
 //        showToast(s);
-//        showToast(i + "");  //or String.valueOf(i)
+//        showToast(i + "");  //or String.valueOf(i) <- convert int to string
 //        showToast("Integer is : " + i);
 
 
