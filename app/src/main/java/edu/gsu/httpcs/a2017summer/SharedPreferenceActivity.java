@@ -29,32 +29,35 @@ public class SharedPreferenceActivity extends BaseActivity {
             shortToast("Login Success");
         }
     }
-
-    @OnClick(R.id.activity_sharedpreference_clear)
-    public void clear(View v) {
-        SharedPreferences sp = getSharedPreferences(USER, MODE_PRIVATE);
-        SharedPreferences.Editor editor = sp.edit();
-        //editor.clear();
-       // editor.remove(EMAIL);
-        //editor.remove(PASSWROD);
-        editor.commit();
-        emailEditText.setText("");
-        passwordEditText.setText("");
-        shortToast("You cleaned all the content");
-    }
-
     private boolean check(String email, String password) {
-        boolean passwordCorrect = true;
+        boolean passwordCorrect = true;  //we will add check process later
         if(passwordCorrect) {
-            SharedPreferences sp = getSharedPreferences("user", MODE_PRIVATE);
+            SharedPreferences sp = getSharedPreferences(USER, MODE_PRIVATE); //SharedPreference is to store previous
+            // input  //it's like hashmap key and value
             SharedPreferences.Editor editor = sp.edit();
-            editor.putString(EMAIL, email);
+            editor.putString(EMAIL, email); //key and value
             editor.putString(PASSWROD, password);
             editor.commit();
             return true;
         }
         else return false;
     }
+
+
+    @OnClick(R.id.activity_sharedpreference_clear)
+    public void clear(View v) {
+        SharedPreferences sp = getSharedPreferences(USER, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
+        editor.clear();
+       // editor.remove(EMAIL);
+        //editor.remove(PASSWROD);
+        editor.commit();
+        emailEditText.setText("");
+        passwordEditText.setText("");
+        shortToast("You cleaned all the content!");
+    }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

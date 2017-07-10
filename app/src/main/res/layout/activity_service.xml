@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="edu.gsu.httpcs.a2017summer.ServiceActivity">
+
+    <TextView
+        android:id="@+id/activity_service_tv"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="Waiting"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:layout_alignParentTop="true"
+        />
+
+    <Button
+        android:id="@+id/activity_service_start"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Start Service"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:textSize="30sp"
+        />
+    <Button
+        android:id="@+id/activity_service_stop"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Stop Service"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:layout_below="@+id/activity_service_start"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="22dp" />
+
+</RelativeLayout>

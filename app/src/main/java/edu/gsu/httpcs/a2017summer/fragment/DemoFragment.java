@@ -29,7 +29,9 @@ import edu.gsu.httpcs.a2017summer.RadioGroupActivity;
 import edu.gsu.httpcs.a2017summer.ResultActivity;
 import edu.gsu.httpcs.a2017summer.RunableHandlerActivity;
 import edu.gsu.httpcs.a2017summer.ScaleTypeActivity;
+import edu.gsu.httpcs.a2017summer.ServiceActivity;
 import edu.gsu.httpcs.a2017summer.SharedPreferenceActivity;
+import edu.gsu.httpcs.a2017summer.TestAudioActivity;
 import edu.gsu.httpcs.a2017summer.ViewPagerActivity;
 import edu.gsu.httpcs.a2017summer.adapter.ListNormalAdapter;
 import edu.gsu.httpcs.a2017summer.audio.BaseBean;
@@ -67,6 +69,9 @@ public class DemoFragment extends Fragment {
         contentList.add("Animator");
         contentList.add("Gesture");
         contentList.add("SharedPreference");
+        contentList.add("ServiceBroadCast");
+        contentList.add("TestAudioPlayer");
+        contentList.add("AudioPlayer");
 
     }
 
@@ -170,6 +175,19 @@ public class DemoFragment extends Fragment {
                         Intent intent16 = new Intent(getActivity(), SharedPreferenceActivity.class);
                         startActivity(intent16);  //
                         break;
+                    case 17:
+                        Intent intent17 = new Intent(getActivity(), ServiceActivity.class);
+                        startActivity(intent17);  //
+                        break;
+                    case 18:
+                        Intent intent18 = new Intent(getActivity(), TestAudioActivity.class);
+                        startActivity(intent18);  //
+                        break;
+//                    case 19:
+//                        Intent intent19 = new Intent(getActivity(), AudioPlayerActivity.class);
+//                        startActivity(intent19);  //
+//                        break;
+
                     default:
                 }
             }

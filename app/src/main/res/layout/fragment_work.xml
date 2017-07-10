@@ -58,12 +58,14 @@
             android:layout_marginTop="1dp"
             android:background="@android:color/black"></View>
         <Button
+            android:id="@+id/click_quiz3"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="Quiz2"
-            android:background="@android:color/darker_gray"
-            android:textAllCaps="false"/>
+            android:background="@drawable/quiz3_bt_bg"
+            android:textAllCaps="false"
+            />
         <View
             android:layout_width="5dp"
             android:layout_height="1dp"
@@ -73,10 +75,11 @@
             android:background="@android:color/black"
             android:textAllCaps="false"></View>
         <Button
+            android:id="@+id/activity_quiz5"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Quiz3"
+            android:text="Quiz5"
             android:background="@android:color/darker_gray"
             android:textAllCaps="false"/>
         <View
@@ -94,8 +97,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:orientation="vertical"
         android:layout_below="@+id/after_third"
-        android:orientation="vertical">
+        android:layout_alignParentStart="true">
         <View
             android:layout_width="match_parent"
             android:layout_height="8dp"

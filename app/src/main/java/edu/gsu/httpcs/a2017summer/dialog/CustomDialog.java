@@ -26,7 +26,7 @@ public class CustomDialog extends Dialog {
     public void ok (View view) {
         listener.onOkClicked("You clicked OK");  //because customDialog is not activity,
         // it needs listener to go back to activity, but listener should create by interface
-        cancel();  //it doesn't close
+        cancel();  //it doesn't close the app
     }
 
     public CustomDialog(@NonNull Context context, ICustomDialogListener listener) {

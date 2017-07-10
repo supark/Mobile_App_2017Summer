@@ -1,6 +1,7 @@
 package edu.gsu.httpcs.a2017summer;
 
 import android.animation.Animator;
+import android.animation.ArgbEvaluator;
 import android.animation.ObjectAnimator;
 import android.animation.TypeEvaluator;
 import android.animation.ValueAnimator;
@@ -25,36 +26,65 @@ public class AnimatorActivity extends BaseActivity {
 
     @OnClick(R.id.animator_trans)
     public void trans() {
-        ObjectAnimator animator = ObjectAnimator.ofFloat(tv, "translationY", 100, -120);
+        ObjectAnimator animator = ObjectAnimator.ofFloat(tv, "translationX", 0, 120); //translationY means moves vertically
+        //if (tv, "translationX", 0, 120), moves horizontally from 0 to 120 X-axis
         animator.setDuration(2000);
         animator.start();
     }
 
     @OnClick(R.id.animator_scale)
     public void scale() {
-        ObjectAnimator animator = ObjectAnimator.ofFloat(tv, "scaleY", 0, 3, 1);
-        animator.setDuration(2000);
+        ObjectAnimator animator = ObjectAnimator.ofFloat(tv, "scaleX", 0, 3, 1, 2, 5, 1);  //these numbers are to make stretch
+        //like these numbers since duration is 5 seconds so it changes 5 times like these numbers
+        //it doesn't matter how many numbers you input because it is array
+        animator.setDuration(5000);
         animator.start();
     }
 
     @OnClick(R.id.animator_color)
     public void color() {
-        ObjectAnimator animator = ObjectAnimator.ofInt(tv, "BackgroundColor", 0xffff00ff, 0xffff00ff, 0xffff00ff);
+        ObjectAnimator animator = ObjectAnimator.ofInt(tv, "BackgroundColor", 0xffff00ff, 0xffffff00, 0xffff00ff);
+        //0xffff00ff - pink,0xffffff00 - yellow( it changes color from first to last)
         animator.setDuration(8000);
         animator.setEvaluator(new ArgbEvaluator());
         animator.start();
     }
+    public class ArgbEvaluator implements TypeEvaluator {
+
+        public Object evaluate(float fraction, Object startValue, Object endValue) { //calculating the color so showing
+            // the color changing like gradation
+            int startInt = (Integer) startValue;
+            int startA = (startInt >> 24);  //0xffffff -  white //0x(A)ff(R)ff(G)ff(B)
+            int startR = (startInt >> 16) & 0xff;
+            int startG = (startInt >> 8 ) & 0xff;
+            int startB = startInt & 0xff;
+
+            int endInt = (Integer) endValue;
+            int endA = (endInt >> 24);
+            int endR = (endInt >> 16) & 0xff;
+            int endG = (endInt >> 8) & 0xff;
+            int endB = endInt & 0xff;
+
+            return (int)((startA + (int)(fraction * (endA - startA))) << 24) |
+                    (int)((startR + (int)(fraction * (endR - startR))) << 16) |
+                    (int)((startG + (int)(fraction * (endG - startG))) << 8) |
+                    (int)((startB + (int)(fraction * (endB - startB))));
+
+        }
+    }
+
+
 
     @OnClick(R.id.animator_alpha)
     public void alpha() {
-        ObjectAnimator animator = ObjectAnimator.ofFloat(tv, "alpha", 1, 0, 1);
+        ObjectAnimator animator = ObjectAnimator.ofFloat(tv, "alpha", 1, 0, 1); //1 is visible, 0 is non-visible
         animator.setDuration(2000);
         animator.start();
     }
 
     @OnClick(R.id.animator_rotation)
     public void rotation() {
-        ObjectAnimator animator = ObjectAnimator.ofFloat(tv, "rotationY", 0, 360, 0);
+        ObjectAnimator animator = ObjectAnimator.ofFloat(tv, "rotationY", 0, 360, 0); //3D style
         animator.setDuration(4000);
         animator.setInterpolator(new AccelerateInterpolator());
         animator.setRepeatMode(ValueAnimator.REVERSE);
@@ -64,21 +94,30 @@ public class AnimatorActivity extends BaseActivity {
 
 
 
-//    @OnClick(R.id.animator_char)
-//    public void charFAnim() {
-//        ValueAnimator animator = ValueAnimator.ofFloat(new CharEvaluator(), new Character('A'), new Character('Z'));
-//        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-//            @Override
-//            public void onAnimationUpdate(ValueAnimator animation) {
-//                char text = (char)animation.getAnimatedValue();
-//                tv.setText(String.valueOf(text));
-//            }
-//        });
-//        animator.setDuration(10000);
-//        animator.setInterpolator(new AccelerateInterpolator());
-//        animator.start();
-//    }
-
+    @OnClick(R.id.animator_char)
+    public void charFAnim() {
+        ValueAnimator animator = ValueAnimator.ofObject(new charEvaluator(), new Character('A'), new Character('z'));
+        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                char text = (char)animation.getAnimatedValue();
+                tv.setText(String.valueOf(text));
+            }
+        });
+        animator.setDuration(10000);
+        animator.setInterpolator(new AccelerateInterpolator());
+        animator.start();
+    }
+    private class charEvaluator implements TypeEvaluator<Character> {
+        @Override
+        public Character evaluate(float fraction, Character startValue, Character endValue) {
+            int startInt = (int)startValue;
+            int endInt = (int)endValue;
+            int curInt = (int)(startInt + fraction * (endInt - startInt));
+            char result = (char) curInt;
+            return result;
+        }
+    }
 
     @OnClick(R.id.anmator_bt_start)
     public void startAnimator() {
@@ -153,41 +192,11 @@ public class AnimatorActivity extends BaseActivity {
 
         animator.setRepeatMode(ValueAnimator.REVERSE);
         animator.setRepeatCount(1);
-        animator.setInterpolator(new CycleInterpolator(10));  //another options are in the anim_alpha.xml
-        animator.setDuration(2000);//set up the duration of the animation
+        animator.setInterpolator(new CycleInterpolator(2));  //another options are in the anim_alpha.xml
+        animator.setDuration(5000);//set up the duration of the animation
         return animator;
     }
 
-    private class charEvaluator implements TypeEvaluator<Character> {
-        @Override
-        public Character evaluate(float fraction, Character startValue, Character endValue) {
-            int startInt = (int)startValue;
-            int endInt = (int)endValue;
-            int curInt = (int)(startInt + fraction * (endInt - startInt));
-            char result = (char) curInt;
-            return result;
-        }
-    }
-    public class ArgbEvaluator implements TypeEvaluator {
-        @Override
-        public Object evaluate(float fraction, Object startValue, Object endValue) {
-            int startInt = (Integer) startValue;
-            int startA = (startInt >> 24);
-            int startR = (startInt >> 16) & 0xff;
-            int startG = (startInt >> 8 ) & 0xff;
-            int startB = startInt & 0xff;
 
-            int endInt = (Integer) endValue;
-            int endA = (endInt >> 24);
-            int endR = (endInt >> 16) & 0xff;
-            int endG = (endInt >> 8) & 0xff;
-            int endB = endInt & 0xff;
 
-            return (int)((startA + (int)(fraction * (endA - startA))) << 24) |
-                    (int)((startR + (int)(fraction * (endR - startR))) << 16) |
-                    (int)((startG + (int)(fraction * (endG - startG))) << 8) |
-                    (int)((startB + (int)(fraction * (endG - startB))));
-
-        }
-    }
 }

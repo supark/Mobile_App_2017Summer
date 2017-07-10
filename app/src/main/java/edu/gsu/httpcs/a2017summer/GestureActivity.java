@@ -7,17 +7,17 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import edu.gsu.httpcs.a2017summer.util.UtilLog;
 
-public class GestureActivity extends BaseActivity {
+public class GestureActivity extends BaseActivity implements View.OnTouchListener   {
 
     private GestureDetector gestureDetector;
-    private View gestureDector;
-    private TextView tv;
-    private float sumX, sumY;
-//last quiz combine animator + gesture
-    //quiz4 radiogroup + checkbox?
+    private int sumX=0, sumY=0;
+
+    @BindView(R.id.activity_gesture_tv)
+    TextView tv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,20 +25,19 @@ public class GestureActivity extends BaseActivity {
         setContentView(R.layout.activity_gesture);
         ButterKnife.bind(this);
 
-        gestureDetector = new GestureDetector(this, new simleGestureListener());
-        //tv.setOnTouchListener(this);
+        gestureDetector = new GestureDetector(this, new simpleGestureListener());
+        tv.setOnTouchListener(this);  //(this) is View.OnTouchListener
         tv.setFocusable(true);
         tv.setClickable(true);
         tv.setLongClickable(true);
     }
 
+    @Override
+    public boolean onTouch(View v, MotionEvent event) {
+        return gestureDetector.onTouchEvent(event);
+    }
 
-//    @Override
-//    public boolean onTouch(View v, MotionEvent event) {
-//        return gestureDector.onTouchEvent(event);
-//    }
-
-    private class simleGestureListener extends GestureDetector.SimpleOnGestureListener {
+    private class simpleGestureListener extends GestureDetector.SimpleOnGestureListener {
         @Override
         public boolean onSingleTapUp(MotionEvent e) {
             UtilLog.d("Gesture", "onSingleTapUp");
@@ -54,8 +53,8 @@ public class GestureActivity extends BaseActivity {
         @Override
         public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
             UtilLog.d("Gesture", "onScroll");
-            UtilLog.d("Gesture", "distanceX" + distanceX);
-            UtilLog.d("Gesture", "distanceY" + distanceY);
+            UtilLog.d("Gesture", "distanceX : " + distanceX);
+            UtilLog.d("Gesture", "distanceY : " + distanceY);
             sumX += distanceX;
             sumY += distanceY;
             return super.onScroll(e1, e2, distanceX, distanceY);
@@ -76,12 +75,12 @@ public class GestureActivity extends BaseActivity {
             }
             if(sumY < 0) {
                 if(Math.abs(sumY)>200) {
-                    shortToast("You scroll from bottom to top");
+                    shortToast("You scroll from top to bottom");
                 }
             }
             if(sumY > 0) {
                 if(Math.abs(sumY)>200) {
-                    shortToast("You scroll from top to bottom");
+                    shortToast("You scroll from bottom to top");
                 }
             }
             return super.onFling(e1, e2, velocityX, velocityY);

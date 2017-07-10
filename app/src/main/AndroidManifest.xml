@@ -2,6 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="edu.gsu.httpcs.a2017summer">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <provider
+        android:name=".content.Provider"
+        android:authorities="edu.gsu.httpcs.a2017summer"
+        android:exported="true" />
+
     <application
         android:name=".suApplication"
         android:allowBackup="true"
@@ -48,7 +55,13 @@
         <activity android:name=".AnimationActivity" />
         <activity android:name=".AnimatorActivity" />
         <activity android:name=".GestureActivity" />
-        <activity android:name=".SharedPreferenceActivity"></activity>
+        <activity android:name=".SharedPreferenceActivity" />
+        <activity android:name=".ServiceActivity" />
+
+        <service android:name=".service.TestService" />
+
+        <activity android:name=".TestAudioActivity" />
+        <activity android:name=".LastQuizActivity"></activity>
     </application>
 
 </manifest>

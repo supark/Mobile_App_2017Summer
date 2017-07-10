@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="300dp"
+    android:layout_height="430dp"
+    android:orientation="vertical"
+    tools:context="edu.gsu.httpcs.a2017summer.practiceQuizActivity">
+
+
+    <RadioGroup
+        android:id="@+id/activity__quiz_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:textSize="30sp"
+            android:text="Quiz3"
+            android:gravity="center"
+            android:background="@android:color/white"
+            android:textColor="@android:color/black"/>
+
+        <RadioButton
+            android:id="@+id/quiz3_yes"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="Yes"
+            />
+
+        <RadioButton
+            android:id="@+id/quiz3_no"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="No"
+            />
+        <RadioButton
+            android:id="@+id/quiz3_exit"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="Exit"
+            />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        >
+
+    <Button
+        android:id="@+id/activity_dialog_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_weight="1"
+        android:text="Cancel"
+        android:gravity="center"
+        android:layout_below="@id/quiz3_exit"
+        android:textAllCaps="false"
+        android:textColor="@android:color/black"
+        android:background="@drawable/quiz3_button_bg"
+        />
+        <ListView
+            android:layout_width="10dp"
+            android:layout_height="match_parent"></ListView>
+    <Button
+        android:id="@+id/activity_dialog_ok"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_weight="1"
+        android:text="OK"
+        android:gravity="center"
+
+        android:textAllCaps="false"
+        android:background="@drawable/quiz3_button_bg"
+        android:textColor="@android:color/black"
+
+        />
+    </LinearLayout>
+    </RadioGroup>
+</LinearLayout>
+

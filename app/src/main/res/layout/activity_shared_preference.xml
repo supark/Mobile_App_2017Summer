@@ -16,19 +16,21 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="Email"
-            android:textSize="30sp"
+            android:text="Email:"
+            android:textSize="15sp"
             android:layout_gravity="center"
-            android:layout_marginLeft="30dp"/>
+            android:layout_marginLeft="30dp"
+            android:gravity="center"/>
+
         <EditText
             android:id="@+id/activity_sharedpreference_email"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginLeft="47dp"
             android:layout_marginRight="30dp"
-            android:layout_marginLeft="30dp"
-            android:hint="Please input your email"
+            android:hint="Please email"
             android:inputType="textEmailAddress"
-            android:paddingLeft="15dp"/>
+            android:paddingLeft="18dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -39,17 +41,18 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="Password"
-            android:textSize="30sp"
+            android:text="Password:"
+            android:textSize="15sp"
             android:layout_gravity="center"
-            android:layout_marginLeft="30dp"/>
+            android:layout_marginLeft="30dp"
+            android:gravity="center"/>
         <EditText
             android:id="@+id/activity_sharedpreference_password"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginRight="30dp"
-            android:layout_marginLeft="30dp"
-            android:hint="Please input your password"
+            android:layout_marginLeft="21dp"
+            android:hint="Please password"
             android:inputType="textWebPassword"
             android:paddingLeft="15dp"/>
     </LinearLayout>

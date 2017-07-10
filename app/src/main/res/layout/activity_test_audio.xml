@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="edu.gsu.httpcs.a2017summer.GestureActivity">
+    tools:context="edu.gsu.httpcs.a2017summer.TestAudioActivity">
 
-    <TextView
-        android:id="@+id/activity_gesture_tv"
+    <Button
+        android:id="@+id/activity_test_audio_play"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Gesture"
-        android:textSize="100sp"
+        android:text="Play"
+        android:textSize="35sp"
         android:gravity="center"
+        android:layout_gravity="center"
         />
 
 </LinearLayout>
